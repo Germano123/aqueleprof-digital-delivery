@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c8pkplayer01"]
+
+[ext_resource type="Script" uid="uid://f0tj0pk0qati" path="res://scripts/player/player_controller.gd" id="1_player_script"]
+[ext_resource type="PackedScene" uid="uid://jb7bckwmvq8i" path="res://models/character/character.glb" id="2_dd427"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_root"]
+radius = 0.35595703
+height = 1.0280273
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pickup"]
+radius = 2.4
+
+[node name="Player" type="CharacterBody3D" unique_id=1362094701]
+script = ExtResource("1_player_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1446650300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51401365, 0)
+shape = SubResource("CapsuleShape3D_root")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=496963658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1772677838]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0)
+spring_length = 4.2
+margin = 0.25
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1521125704]
+current = true
+
+[node name="VisualModel" type="Node3D" parent="." unique_id=1633204657]
+
+[node name="Gfx" parent="VisualModel" unique_id=1371544249 instance=ExtResource("2_dd427")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.04542844, 0)
+
+[node name="CarrySocket" type="Marker3D" parent="VisualModel" unique_id=223599511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.6)
+
+[node name="PickupDetector" type="Area3D" parent="." unique_id=1342982605]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupDetector" unique_id=2143441637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("SphereShape3D_pickup")

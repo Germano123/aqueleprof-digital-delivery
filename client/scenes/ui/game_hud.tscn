@@ -1,0 +1,277 @@
+[gd_scene load_steps=2 format=3 uid="uid://h8gamehud01"]
+
+[ext_resource type="Script" path="res://scripts/ui/game_hud.gd" id="1_hud_script"]
+
+[node name="GameHUD" type="CanvasLayer"]
+script = ExtResource("1_hud_script")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="TimerContainer" type="PanelContainer" parent="TopBar"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+
+[node name="LabelTimer" type="Label" parent="TopBar/TimerContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "08:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProcessContainer" type="PanelContainer" parent="TopBar"]
+custom_minimum_size = Vector2(440, 54)
+layout_mode = 2
+
+[node name="VBoxProcess" type="VBoxContainer" parent="TopBar/ProcessContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="TopBar/ProcessContainer/VBoxProcess"]
+layout_mode = 2
+
+[node name="LabelProcessTitle" type="Label" parent="TopBar/ProcessContainer/VBoxProcess/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "⚡ CARGA DO SISTEMA (CRASH LIMIT)"
+
+[node name="LabelProcessCount" type="Label" parent="TopBar/ProcessContainer/VBoxProcess/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "0 / 12 PROCESSOS"
+horizontal_alignment = 2
+
+[node name="ProgressBarProcess" type="ProgressBar" parent="TopBar/ProcessContainer/VBoxProcess"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+max_value = 12.0
+step = 1.0
+show_percentage = false
+
+[node name="LabelProcessStatus" type="Label" parent="TopBar/ProcessContainer/VBoxProcess"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 11
+text = "● ESTÁVEL - NENHUM RISCO DE CRASH"
+horizontal_alignment = 1
+
+[node name="ScoreContainer" type="PanelContainer" parent="TopBar"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+
+[node name="LabelScore" type="Label" parent="TopBar/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "0 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StreakContainer" type="PanelContainer" parent="TopBar"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+
+[node name="LabelStreak" type="Label" parent="TopBar/StreakContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "🔥 Streak x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RequestCard" type="PanelContainer" parent="."]
+offset_left = 24.0
+offset_top = 82.0
+offset_right = 440.0
+offset_bottom = 198.0
+
+[node name="VBox" type="VBoxContainer" parent="RequestCard"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LabelTitle" type="Label" parent="RequestCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "📌 REQUISIÇÃO DO CLIENTE"
+
+[node name="LabelPrompt" type="Label" parent="RequestCard/VBox"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "O cliente precisa alterar o relatório de vendas."
+autowrap_mode = 3
+
+[node name="LabelFile" type="Label" parent="RequestCard/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+text = "Arquivo: vendas.xlsx (.xlsx) | Categoria: Planilha"
+
+[node name="FeedbackToast" type="PanelContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -140.0
+offset_right = 260.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LabelFeedback" type="Label" parent="FeedbackToast"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Entrega Perfeita em Planilha Eletrônica! (+100 pts)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CarriedInfo" type="PanelContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -64.0
+offset_right = 200.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LabelCarried" type="Label" parent="CarriedInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "📦 Carregando: relatorio.docx (.docx) [E: Largar | F: Arremessar]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CrashOverlay" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.12, 0.35, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="CrashOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxCrash" type="VBoxContainer" parent="CrashOverlay/CenterContainer"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelSad" type="Label" parent="CrashOverlay/CenterContainer/VBoxCrash"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = ":("
+
+[node name="LabelBsodTitle" type="Label" parent="CrashOverlay/CenterContainer/VBoxCrash"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "O COMPUTADOR ENCONTROU UM PROBLEMA CRÍTICO"
+
+[node name="LabelBsodDesc" type="Label" parent="CrashOverlay/CenterContainer/VBoxCrash"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "O processador atingiu a sobrecarga máxima por acúmulo de requisições pendentes na placa-mãe.
+O computador foi desligado inesperadamente para proteger a integridade dos dados e circuitos."
+autowrap_mode = 3
+
+[node name="LabelStopCode" type="Label" parent="CrashOverlay/CenterContainer/VBoxCrash"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 14
+text = "CÓDIGO DE PARADA: SYSTEM_PROCESS_OVERLOAD_CRASH (0x000000D1)
+DESLIGANDO SISTEMA..."
+
+[node name="CrtShutdownBeam" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InGameTerminal" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -240.0
+offset_right = 380.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxTerminal" type="VBoxContainer" parent="InGameTerminal"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TerminalHeader" type="HBoxContainer" parent="InGameTerminal/VBoxTerminal"]
+layout_mode = 2
+
+[node name="LabelHeader" type="Label" parent="InGameTerminal/VBoxTerminal/TerminalHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "⌨ TERMINAL DE CONTROLE EM JOGO [ESC PARA FECHAR]"
+
+[node name="TerminalOutput" type="RichTextLabel" parent="InGameTerminal/VBoxTerminal"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+scroll_following = true
+
+[node name="TerminalInputRow" type="HBoxContainer" parent="InGameTerminal/VBoxTerminal"]
+layout_mode = 2
+
+[node name="LabelPrompt" type="Label" parent="InGameTerminal/VBoxTerminal/TerminalInputRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 14
+text = "> "
+
+[node name="TerminalInput" type="LineEdit" parent="InGameTerminal/VBoxTerminal/TerminalInputRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Digite 'exit' para sair da sala, ou 'resume' para voltar..."
+clear_button_enabled = true
+
+[node name="PopupSpamContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+

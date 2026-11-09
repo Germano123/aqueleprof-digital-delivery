@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://f8tileflr01"]
+
+[ext_resource type="Script" uid="uid://dlpd604y0tr7j" path="res://scripts/scenery/tile_floor.gd" id="1_floor_script"]
+[ext_resource type="Texture2D" uid="uid://cmhtw1x0ccf1y" path="res://models/tiles/tiles_tile-texture.png" id="2_2b81h"]
+[ext_resource type="Texture2D" uid="uid://b8fkhel875fy7" path="res://models/tiles/tiles_tile-emission.png" id="3_tddsx"]
+[ext_resource type="Texture2D" uid="uid://bcvs27c27uxwt" path="res://models/tiles/tiles_tile-normal.png" id="4_nupht"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygk51"]
+resource_name = "TileDefaultMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("2_2b81h")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0000002
+emission_operator = 1
+emission_texture = ExtResource("3_tddsx")
+normal_enabled = true
+normal_scale = 10.0
+normal_texture = ExtResource("4_nupht")
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5jpd7"]
+_surfaces = [{
+"aabb": AABB(0, 0, -1, 1, 0.2, 1),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAACAAMAAwABAAUABgAEAAMABgADAAUABQABAAcABQAHAAYABgAIAAQABAAIAAIABgAHAAgACQAHAAEAAAAJAAEACgAIAAcACQAKAAcACwACAAgACwAAAAIACgALAAgADAAAAAsADQAKAAkADgAJAAAADQAJAA4ADgAAAAwADwAKAA0ADgAPAA0ADwALAAoADgAMAA8ADAALAA8A"),
+"name": "TileDefaultMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAVBT//6rrAACq6///qusAAFQU//9UFAAAquv//1QUAAD/////AAAAAP///////wAAAAAAAAAAAAD//wAAAAAAAP//AAD//wAAVBQAAKrrAACq6wAAVBQAAFQUAABUFAAAqusAAKrrAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8go78"]
+resource_name = "tiles_Cube_020"
+_surfaces = [{
+"aabb": AABB(0, 0, -1, 1, 0.2, 1),
+"attribute_data": PackedByteArray("AWAXd3duWUh3bhd3AWBZSAFgF3d3bllId24XdwFgWUh3bllIAWAXdwFgWUh3bhd3d25ZSAFgF3cBYFlId24Xd5+5nkm3dCgJn7koCbd0nkmfuSgJt3SeSbd0KAmfuZ5J0iAl3gIPSpfSIHiwGn1KlwIPzPr5a3iw+Wsl3hp9zPrC7PKnrv2C+8Lsgvuu/fKnwuzyp679gvvC7IL7rv3yp8Ls8qeu/YL7wuyC+6798qfC7PKnrv2C+8Lsgvuu/fKn"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_ygk51"),
+"name": "TileDefaultMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///79UFAAAVBRU1arrAACq61TVqusAAFQUVNVUFAAAqutU1arr//9UFP+/VBT//6rr/79UFP//VBT/v6rr//+q6/+/VBQAAFQUN8MAAAAA//8lw1QUAACq65XE//8AAP//O8MAAAAAAACZw6rrAACq6+HCqusAAFQUxMT//wAAAABEw1QU//+q67fqAAD//wAAE+1UFP//VBSq6QAA/////6rpVBT//1QUn+j/////AADhx6rr//9UFPzFAAD//wAAqumq6///VBRxxf///////1LEquv//6rr/MX/////AAD8xarr//+q64zGAAD/////TuZUFP//quuq6f////////zFVNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qqlRVqqpUVaqqVFWqqlRV/3//f/9//3//f/9//3//f1VVVFVVVVRVVFVUVVVVVFX///9/////f////3////9/Qy9daHQX566aGjS1Vy9TaBsxcWeCLT5p8xrmtcMXh6/7lIG1ZMnLEvrK9hX1lQS1dsvvFmPgyED/4gFG+sr2Fd3ju0fPyxeaAMb+nP/iAUZUxNSdGZlys/WVBLUAxv6c")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5jpd7")
+
+[sub_resource type="MultiMesh" id="MultiMesh_gxjmn"]
+transform_format = 1
+instance_count = 16
+mesh = SubResource("ArrayMesh_8go78")
+buffer = PackedFloat32Array(2, 0, 0, -4, 0, 1, 0, 0, 0, 0, 2, -2, 2, 0, 0, -4, 0, 1, 0, 0, 0, 0, 2, 0, 2, 0, 0, -4, 0, 1, 0, 0, 0, 0, 2, 2, 2, 0, 0, -4, 0, 1, 0, 0, 0, 0, 2, 4, 2, 0, 0, -2, 0, 1, 0, 0, 0, 0, 2, -2, 2, 0, 0, -2, 0, 1, 0, 0, 0, 0, 2, 0, 2, 0, 0, -2, 0, 1, 0, 0, 0, 0, 2, 2, 2, 0, 0, -2, 0, 1, 0, 0, 0, 0, 2, 4, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, -2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 4, 2, 0, 0, 2, 0, 1, 0, 0, 0, 0, 2, -2, 2, 0, 0, 2, 0, 1, 0, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0, 1, 0, 0, 0, 0, 2, 2, 2, 0, 0, 2, 0, 1, 0, 0, 0, 0, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ugcx"]
+size = Vector3(8, 0.4, 8)
+
+[node name="TileFloor" type="Node3D" unique_id=1578950262]
+script = ExtResource("1_floor_script")
+
+[node name="MultiMeshInstance" type="MultiMeshInstance3D" parent="." unique_id=1730666507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18377495, 0)
+material_override = SubResource("StandardMaterial3D_ygk51")
+multimesh = SubResource("MultiMesh_gxjmn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1275175388]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=331278745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0066845864, 0)
+shape = SubResource("BoxShape3D_7ugcx")

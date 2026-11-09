@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://c8gameover01"]
+
+[ext_resource type="Script" path="res://scripts/game/game_over.gd" id="1_over_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.05, 0.07, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gold"]
+bg_color = Color(0.12, 0.1, 0.02, 0.85)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.95, 0.77, 0.06, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_silver"]
+bg_color = Color(0.08, 0.1, 0.12, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.74, 0.76, 0.78, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bronze"]
+bg_color = Color(0.1, 0.07, 0.04, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.49, 0.13, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_over_script")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxMain" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderBox" type="VBoxContainer" parent="MarginContainer/VBoxMain"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LabelHeaderTitle" type="Label" parent="MarginContainer/VBoxMain/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.3, 0.24, 1)
+theme_override_font_sizes/font_size = 28
+text = "💥 SISTEMA DESLIGADO INESPERADAMENTE (KERNEL PANIC)"
+horizontal_alignment = 1
+
+[node name="LabelHeaderSub" type="Label" parent="MarginContainer/VBoxMain/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.65, 0.65, 1)
+theme_override_font_sizes/font_size = 14
+text = "O processador atingiu sobrecarga fatal por acúmulo excessivo de processos pendentes na placa-mãe."
+horizontal_alignment = 1
+
+[node name="PodiumContainer" type="HBoxContainer" parent="MarginContainer/VBoxMain"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CardSilver" type="PanelContainer" parent="MarginContainer/VBoxMain/PodiumContainer"]
+custom_minimum_size = Vector2(250, 160)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_silver")
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBoxMain/PodiumContainer/CardSilver"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="LabelBadge" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardSilver/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74, 0.76, 0.78, 1)
+theme_override_font_sizes/font_size = 16
+text = "🥈 2º LUGAR"
+horizontal_alignment = 1
+
+[node name="LabelName" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardSilver/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Operador 2"
+horizontal_alignment = 1
+
+[node name="LabelScore" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardSilver/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74, 0.76, 0.78, 1)
+theme_override_font_sizes/font_size = 22
+text = "350 PTS"
+horizontal_alignment = 1
+
+[node name="LabelStats" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardSilver/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.65, 0.65, 1)
+theme_override_font_sizes/font_size = 12
+text = "3 corretas"
+horizontal_alignment = 1
+
+[node name="CardGold" type="PanelContainer" parent="MarginContainer/VBoxMain/PodiumContainer"]
+custom_minimum_size = Vector2(300, 190)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gold")
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBoxMain/PodiumContainer/CardGold"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LabelBadge" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardGold/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.06, 1)
+theme_override_font_sizes/font_size = 20
+text = "👑 🥇 1º LUGAR"
+horizontal_alignment = 1
+
+[node name="LabelName" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardGold/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Operador 1"
+horizontal_alignment = 1
+
+[node name="LabelScore" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardGold/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.06, 1)
+theme_override_font_sizes/font_size = 30
+text = "850 PTS"
+horizontal_alignment = 1
+
+[node name="LabelStats" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardGold/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/font_size = 14
+text = "8 corretas | 0 erros"
+horizontal_alignment = 1
+
+[node name="CardBronze" type="PanelContainer" parent="MarginContainer/VBoxMain/PodiumContainer"]
+custom_minimum_size = Vector2(250, 160)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_bronze")
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBoxMain/PodiumContainer/CardBronze"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="LabelBadge" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardBronze/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.49, 0.13, 1)
+theme_override_font_sizes/font_size = 16
+text = "🥉 3º LUGAR"
+horizontal_alignment = 1
+
+[node name="LabelName" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardBronze/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Operador 3"
+horizontal_alignment = 1
+
+[node name="LabelScore" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardBronze/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.49, 0.13, 1)
+theme_override_font_sizes/font_size = 22
+text = "250 PTS"
+horizontal_alignment = 1
+
+[node name="LabelStats" type="Label" parent="MarginContainer/VBoxMain/PodiumContainer/CardBronze/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.65, 0.65, 1)
+theme_override_font_sizes/font_size = 12
+text = "2 corretas"
+horizontal_alignment = 1
+
+[node name="TableCard" type="PanelContainer" parent="MarginContainer/VBoxMain"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxMain/TableCard"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxRows" type="VBoxContainer" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="TableHeader" type="HBoxContainer" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HPos" type="Label" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows/TableHeader"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "POS"
+
+[node name="HName" type="Label" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows/TableHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "OPERADOR"
+
+[node name="HDeliv" type="Label" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows/TableHeader"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "ENTREGAS"
+
+[node name="HScore" type="Label" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows/TableHeader"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "PONTUAÇÃO"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows"]
+layout_mode = 2
+
+[node name="LabelEmptyTable" type="Label" parent="MarginContainer/VBoxMain/TableCard/ScrollContainer/VBoxRows"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 13
+text = "Sem outros jogadores na sessão."
+horizontal_alignment = 1
+
+[node name="FooterBox" type="VBoxContainer" parent="MarginContainer/VBoxMain"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LabelDidactic" type="Label" parent="MarginContainer/VBoxMain/FooterBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.9, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+text = "📚 ESTATÍSTICAS // Entregas Avaliadas: 8 | Precisão: 100% | Categoria de Maior Domínio: Documentos"
+horizontal_alignment = 1
+
+[node name="CenterBtn" type="CenterContainer" parent="MarginContainer/VBoxMain/FooterBox"]
+layout_mode = 2
+
+[node name="BtnReturnTerminal" type="Button" parent="MarginContainer/VBoxMain/FooterBox/CenterBtn"]
+custom_minimum_size = Vector2(460, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 18
+text = "[ ⏎ REINICIAR SISTEMA / VOLTAR AO TERMINAL ]"

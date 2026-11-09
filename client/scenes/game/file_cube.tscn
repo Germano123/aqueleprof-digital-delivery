@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8xqkupk8file"]
+
+[ext_resource type="Script" path="res://scripts/entities/file_cube.gd" id="1_cube_script"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bounce"]
+bounce = 0.55
+absorbent = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_root"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wireframe"]
+resource_local_to_scene = true
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+metallic = 0.4
+roughness = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_outer"]
+size = Vector3(0.75, 0.75, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_core"]
+resource_local_to_scene = true
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+emission_enabled = true
+emission = Color(0.5, 0.5, 0.5, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_core"]
+radius = 0.22
+height = 0.44
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pickup"]
+radius = 1.6
+
+[node name="FileCube" type="RigidBody3D"]
+collision_layer = 1
+collision_mask = 1
+physics_material_override = SubResource("PhysicsMaterial_bounce")
+script = ExtResource("1_cube_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_root")
+
+[node name="VisualPivot" type="Node3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 0, 0)
+
+[node name="WireframeMesh" type="MeshInstance3D" parent="VisualPivot"]
+material_override = SubResource("StandardMaterial3D_wireframe")
+mesh = SubResource("BoxMesh_outer")
+
+[node name="DataCore" type="MeshInstance3D" parent="VisualPivot"]
+material_override = SubResource("StandardMaterial3D_core")
+mesh = SubResource("SphereMesh_core")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_pickup")
+
+[node name="FloatingLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+billboard = 1
+double_sided = true
+no_depth_test = true
+render_priority = 3
+text = "📄 relatorio.docx"
+font_size = 28
+outline_size = 8
+outline_modulate = Color(0, 0, 0, 1)

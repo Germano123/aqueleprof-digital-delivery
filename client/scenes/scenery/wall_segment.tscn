@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://w8wallseg01"]
+
+[ext_resource type="Script" path="res://scripts/scenery/wall_segment.gd" id="1_wall_script"]
+
+[node name="WallSegment" type="StaticBody3D"]
+script = ExtResource("1_wall_script")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]

@@ -1,0 +1,150 @@
+[
+  {
+    "username": "aluno1",
+    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "createdAt": 1789757771622,
+    "lastLoginAt": 1789757771718
+  },
+  {
+    "username": "hacker_aluno",
+    "passwordHash": "5cc6ccbe07ac6f71efe6bd28f096a593b0da61dcbd7f28552a4c56c4b7456a98",
+    "createdAt": 1789757898681,
+    "lastLoginAt": 1789757898789
+  },
+  {
+    "username": "asdderf",
+    "passwordHash": "a0ead463183caadf6703ebe7bd2fb61dc3e2dc9fa0b0c4377c22df51663be5f1",
+    "createdAt": 1789768450548,
+    "lastLoginAt": 1789769878703
+  },
+  {
+    "username": "aluno5",
+    "passwordHash": "d0e2ece166bdef23adedfaa3f1c47c9f969270f0fc519185514d58b4c7f6d199",
+    "createdAt": 1789771420113,
+    "lastLoginAt": 1789779047879
+  },
+  {
+    "username": "pigmeu",
+    "passwordHash": "3aa13aa636f6c018a445307c691d1a10ec1d6a7c8c2bbe7553e375c3ef03d663",
+    "createdAt": 1789771468811,
+    "lastLoginAt": 1790115613293
+  },
+  {
+    "username": "Yone",
+    "passwordHash": "f15cea39f11dc0371cfb9a4b7b1c38d5c636feb72d70e2759b0e505905ee9d01",
+    "createdAt": 1789771525426,
+    "lastLoginAt": 1790117332084
+  },
+  {
+    "username": "princesinha",
+    "passwordHash": "1dc1f7a9b0de2a48a6236a94002c9283318f84f31415d71b298cb3eb4d3473d1",
+    "createdAt": 1789771549109
+  },
+  {
+    "username": "thamires",
+    "passwordHash": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
+    "createdAt": 1789771674054,
+    "lastLoginAt": 1790116770664
+  },
+  {
+    "username": "xit",
+    "passwordHash": "24fae883d5ce2d893f20bf2b28ce11b21deaae5fb98a46fb9e6d9bb05fe03d46",
+    "createdAt": 1789771710555,
+    "lastLoginAt": 1790117056527
+  },
+  {
+    "username": "principenegro",
+    "passwordHash": "1dc1f7a9b0de2a48a6236a94002c9283318f84f31415d71b298cb3eb4d3473d1",
+    "createdAt": 1789771745763,
+    "lastLoginAt": 1790113112596
+  },
+  {
+    "username": "carrara",
+    "passwordHash": "a3e5879009f973c93e65779308f048ef60e1b23050676348f3de75d532af9ce2",
+    "createdAt": 1789771749682,
+    "lastLoginAt": 1789772146190
+  },
+  {
+    "username": "operadornoite",
+    "passwordHash": "e8a48c2c3bb2f32880a4b7b5c519ac9805c8e4b707c79e458ce10cf02410dbf3",
+    "createdAt": 1789771751192,
+    "lastLoginAt": 1790114161253
+  },
+  {
+    "username": "thiago",
+    "passwordHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "createdAt": 1789771893744,
+    "lastLoginAt": 1790114216705
+  },
+  {
+    "username": "rucandel",
+    "passwordHash": "82066d8f27d4b47effbb89ad8bbb9e5d1b6b2b5c3df270fdeb3706bcaa61a12f",
+    "createdAt": 1789771945918,
+    "lastLoginAt": 1790119144526
+  },
+  {
+    "username": "winchester",
+    "passwordHash": "4e139b2d4bc482524ad64367b7640675292946905e0b6085141e9304de80dfdd",
+    "createdAt": 1789772303799,
+    "lastLoginAt": 1790115540599
+  },
+  {
+    "username": "jair",
+    "passwordHash": "4cc8f4d609b717356701c57a03e737e5ac8fe885da8c7163d3de47e01849c635",
+    "createdAt": 1789772352017,
+    "lastLoginAt": 1790113434309
+  },
+  {
+    "username": "myuser",
+    "passwordHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "createdAt": 1789773087159,
+    "lastLoginAt": 1790715290702
+  },
+  {
+    "username": "mendes",
+    "passwordHash": "822a965f61c45f7a211440711acbe755161292de38d20178b01229056e1a7a2e",
+    "createdAt": 1789773581805,
+    "lastLoginAt": 1789776462543
+  },
+  {
+    "username": "poter",
+    "passwordHash": "1b527626476d0b34565bc1ed5db94a5afbd946fa618ea3441dd5bae7dc84a97a",
+    "createdAt": 1789773908557,
+    "lastLoginAt": 1789778464808
+  },
+  {
+    "username": "augustinho",
+    "passwordHash": "1ee4e10c0c7e1bd5ff9cd70d1f3c03521abf21ea7ee45aa92deab16f87af4dbb",
+    "createdAt": 1789774496347,
+    "lastLoginAt": 1790117046072
+  },
+  {
+    "username": "kasefox",
+    "passwordHash": "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab",
+    "createdAt": 1790113146589,
+    "lastLoginAt": 1790113181022
+  },
+  {
+    "username": "jon-kok",
+    "passwordHash": "1b527626476d0b34565bc1ed5db94a5afbd946fa618ea3441dd5bae7dc84a97a",
+    "createdAt": 1790113163909,
+    "lastLoginAt": 1790119123796
+  },
+  {
+    "username": "expedito",
+    "passwordHash": "158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab",
+    "createdAt": 1790113377513,
+    "lastLoginAt": 1790113399295
+  },
+  {
+    "username": "fernanda",
+    "passwordHash": "515bb44a00097ac13d8b1c0939a63a81fe10bfa9a5a0cd0ae3e18597cc2b4932",
+    "createdAt": 1790113861818,
+    "lastLoginAt": 1790115106033
+  },
+  {
+    "username": "unknow",
+    "passwordHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "createdAt": 1790116201138
+  }
+]

@@ -1,0 +1,17 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: digital-delivery-server:latest
+    container_name: digital-delivery-server
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - HOST=0.0.0.0
+      - NODE_ENV=production
+    volumes:
+      # Persistência do banco de dados de contas (users.json)
+      - ./data:/app/data
